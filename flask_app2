@@ -1,0 +1,17 @@
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/test/<search_query>')
+def search(search_query):
+     return search_query
+
+@app.route("/integer/<int:value>")
+def int_type(value):
+     return(value+10)
+
+@app.route("/float/<float:value>")      
+def float_type(value):
+     return(value+ value)
+
+if __name__ == "__main__":
+    app.run()     
